@@ -109,9 +109,6 @@
 
 ## 📊 Digital Footprint
 
-<div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=MohamedSayedAbdelrazek&theme=github-dark&hide_border=true&date_format=j%20M%5B%20Y%5D&background=0D1117&stroke=0D1117&fire=00FFFF&currStreakNum=00FFFF&currStreakLabel=00FFFF&ring=00FFFF&sideNums=00FFFF&sideLabels=FFFFFF" alt="GitHub Streak" width="420" />
-</div>
 
 <div align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=MohamedSayedAbdelrazek&theme=darkhub&no-frame=true&row=1&column=6&margin-w=15" alt="GitHub Trophies" width="800" />
