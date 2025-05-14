@@ -3,11 +3,6 @@
   # 👨‍💻 Mohamed Sayed Abdelrazek
   
   [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=3000&pause=1000&center=true&vCenter=true&width=600&lines=Backend+Developer;Problem+Solver;Tech+Enthusiast;Welcome+to+my+GitHub+Profile!;Let's+build+something+amazing+together...)](https://git.io/typing-svg)
-  
-<!-- GitHub Activity Graph -->
- 
-<img src="https://github-readme-activity-graph.cyclic.app/graph?username=MohamedSayedAbdelrazek&bg_color=141321&color=fe428e&line=f8d847&point=A9FEF7&area=true&hide_border=true" alt="Mohamed's GitHub Activity Graph" width="100%" />
-
 
   <!-- GitHub Stats Cards -->
   <p align="center">
