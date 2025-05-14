@@ -32,7 +32,7 @@
 
 ---
 
-## 🔗 Digital Nexus
+## 🔗 Connect with Me
 
 <div align="center">
   <a href="https://www.linkedin.com/in/mohamed-sayed-abdulrazek/" target="_blank">
@@ -48,7 +48,7 @@
 
 ---
 
-## 🛠️ Technical Arsenal
+## 🛠️ Tools & Technologies
 
 <div align="center">
   <table bgcolor="#0D1117">
