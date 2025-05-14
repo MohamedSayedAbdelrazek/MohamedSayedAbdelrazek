@@ -20,21 +20,17 @@
 
 ## ⚡ About Me
 
-<img align="right" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" alt="Coding GIF" width="300">
+<img align="right" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" alt="Coding GIF" width="250">
 
-- 🎓 I'm a computer science student passionate about backend development
-- 🛠️ Learning and building using PHP, Laravel, and MySQL
-- 📚 Interested in clean code, system design basics, and solving real-world problems
-- 🤝 Looking for internship opportunities to grow and gain hands-on experience
-- 💬 Always open to learning from others and contributing to team projects
-- 📫 Reach me at: **m.s.abdulrazek@gmail.com**
+Hi there! I'm Mohamed 👋
+
+- 🎓 I'm a computer science student passionate about backend development  
+- 🛠️ Learning and building using PHP, Laravel, and MySQL  
+- 📚 Interested in clean code, system design basics, and solving real-world problems  
+- 🤝 Looking for internship opportunities to grow and gain hands-on experience  
+- 💬 Always open to learning from others and contributing to team projects  
+- 📫 Reach me at: **m.s.abdulrazek@gmail.com**  
 - ✨ Fun fact: I love solving programming puzzles in my free time!
-
-
-
-
-
-
 
 ---
 
