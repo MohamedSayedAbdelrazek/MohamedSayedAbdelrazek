@@ -1,8 +1,8 @@
 <div align="center">
   
   # 👨‍💻 Mohamed Sayed Abdelrazek
-  
-  [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=24&duration=3000&pause=1000&center=true&vCenter=true&width=600&lines=Backend+Developer;Problem+Solver;Tech+Architect;Welcome+to+my+Digital+Universe;Let's+craft+efficient+solutions+together...&color=00FFFF)](https://git.io/typing-svg)
+ 
+ [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=3000&pause=1000&center=true&vCenter=true&width=600&lines=Welcome+to+my+GitHub+Profile!;Backend+Developer;Problem+Solver;Tech+Enthusiast;Let's+build+something+amazing+together...)](https://git.io/typing-svg)
 
   <!-- GitHub Stats Cards with dark theme -->
   <p align="center">
@@ -110,12 +110,13 @@
 ## 📊 Digital Footprint
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=MohamedSayedAbdelrazek&theme=black-ice&hide_border=true&stroke=0000&background=0D1117&ring=00FFFF&fire=00FFFF&currStreakLabel=00FFFF" alt="GitHub Streak" width="420" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=MohamedSayedAbdelrazek&theme=github-dark&hide_border=true&date_format=j%20M%5B%20Y%5D&background=0D1117&stroke=0D1117&fire=00FFFF&currStreakNum=00FFFF&currStreakLabel=00FFFF&ring=00FFFF&sideNums=00FFFF&sideLabels=FFFFFF" alt="GitHub Streak" width="420" />
 </div>
 
 <div align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=MohamedSayedAbdelrazek&theme=darkhub&no-frame=true&row=1&column=6&margin-w=15" alt="GitHub Trophies" width="800" />
 </div>
+
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=MohamedSayedAbdelrazek&theme=react-dark&bg_color=0D1117&color=00FFFF&line=00FFFF&point=FFFFFF&hide_border=true" width="800" />
@@ -130,5 +131,5 @@
 ---
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:00FFFF&height=120&section=footer&text=Architecting%20Digital%20Excellence&fontSize=24&fontColor=FFFFFF&fontAlignY=80&animation=fadeIn" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:00FFFF&height=120&section=footer&text=Let's%20Create%20Something%20Amazing%20Together!&fontSize=24&fontColor=FFFFFF&fontAlignY=80&animation=fadeIn" width="100%" />
 </div>
