@@ -5,8 +5,10 @@
   [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=3000&pause=1000&center=true&vCenter=true&width=600&lines=Backend+Developer;Problem+Solver;Tech+Enthusiast;Welcome+to+my+GitHub+Profile!;Let's+build+something+amazing+together...)](https://git.io/typing-svg)
   
 <!-- GitHub Activity Graph -->
-  <img src="https://activity-graph.herokuapp.com/graph?username=MohamedSayedAbdelrazek&bg_color=141321&color=fe428e&line=f8d847&point=A9FEF7&area=true&hide_border=true" alt="Mohamed's GitHub Activity Graph" width="100%" />
-  
+ 
+<img src="https://github-readme-activity-graph.cyclic.app/graph?username=MohamedSayedAbdelrazek&bg_color=141321&color=fe428e&line=f8d847&point=A9FEF7&area=true&hide_border=true" alt="Mohamed's GitHub Activity Graph" width="100%" />
+
+
   <!-- GitHub Stats Cards -->
   <p align="center">
     <img src="https://github-readme-stats.vercel.app/api?username=MohamedSayedAbdelrazek&show_icons=true&theme=radical&border_radius=10&hide_border=true&bg_color=0D1117&title_color=f94989&icon_color=f0db4f" height="165" alt="GitHub Stats" />
