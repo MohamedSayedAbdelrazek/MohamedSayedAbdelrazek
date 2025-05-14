@@ -134,49 +134,6 @@
 
 ---
 
-## 🔥 Featured Projects
-
-<div align="center">
-
-<!-- PROJECT CARDS -->
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3 align="center">Backend Project</h3>
-      <div align="center">
-        <img src="https://raw.githubusercontent.com/kataras/iris/master/assets/iris_banner_light.png" width="100%" alt="Project 1"/>
-        <p>
-          <a href="https://github.com/MohamedSayedAbdelrazek" target="_blank">
-            <img src="https://img.shields.io/badge/CODE-ff9?style=for-the-badge&logo=github&logoColor=black">
-          </a>
-          <a href="https://github.com/MohamedSayedAbdelrazek" target="_blank">
-            <img src="https://img.shields.io/badge/DEMO-39FF14?style=for-the-badge&logo=netlify&logoColor=black">
-          </a>
-        </p>
-        <p><strong>PHP, Laravel, MySQL</strong> - A robust backend solution with advanced features and optimized performance.</p>
-      </div>
-    </td>
-    <td width="50%" valign="top">
-      <h3 align="center">API Development</h3>
-      <div align="center">
-        <img src="https://cdn.dribbble.com/users/1062909/screenshots/4241913/rest-api-design-1.jpg" width="100%" alt="Project 2"/>
-        <p>
-          <a href="https://github.com/MohamedSayedAbdelrazek" target="_blank">
-            <img src="https://img.shields.io/badge/CODE-ff9?style=for-the-badge&logo=github&logoColor=black">
-          </a>
-          <a href="https://github.com/MohamedSayedAbdelrazek" target="_blank">
-            <img src="https://img.shields.io/badge/DEMO-39FF14?style=for-the-badge&logo=netlify&logoColor=black">
-          </a>
-        </p>
-        <p><strong>PHP, RESTful API, Authentication</strong> - Scalable API architecture with comprehensive documentation.</p>
-      </div>
-    </td>
-  </tr>
-</table>
-</div>
-
----
-
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=120&section=footer&text=Let's%20Create%20Something%20Amazing%20Together!&fontSize=24&fontAlignY=80&animation=fadeIn" width="100%" />
 </div>
