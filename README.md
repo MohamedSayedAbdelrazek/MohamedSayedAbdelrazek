@@ -20,9 +20,12 @@
 
 ## ⚡ About Me
 
-<img align="right" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" alt="Coding GIF" width="250">
-
-Hi there! I'm Mohamed 👋
+<div align="center">
+  <img align="right" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" alt="Coding GIF" width="250">
+  <p style="text-align: center; margin-top: 20px;">
+    Hi there! I'm Mohamed 👋
+  </p>
+</div>
 
 - 🎓 I'm a computer science student passionate about backend development  
 - 🛠️ Learning and building using PHP, Laravel, and MySQL  
