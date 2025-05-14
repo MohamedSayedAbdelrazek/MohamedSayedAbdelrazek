@@ -27,7 +27,7 @@
 - 🛡️ Specialized in RESTful API design and database performance optimization
 - 🌑 Delving into advanced system architecture patterns and microservices
 - 🧠 Problem solver with an eye for efficiency and clean code
-- 📫 Summon me at: **mohamedsayed051213@gmail.com**
+- 📫 Summon me at: **m.s.abdulrazek@gmail.com**
 - ⚡ Hidden talent: I can solve a Rubik's cube in under 2 minutes while debugging code!
 
 ---
