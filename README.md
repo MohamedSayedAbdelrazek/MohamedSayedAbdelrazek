@@ -30,6 +30,8 @@
 - 📫 Reach me at: **m.s.abdulrazek@gmail.com**
 - ✨ Fun fact: I love solving programming puzzles in my free time!
 
+
+
 ---
 
 ## 🔗 Digital Nexus
