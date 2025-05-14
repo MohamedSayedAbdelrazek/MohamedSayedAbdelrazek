@@ -22,13 +22,13 @@
 
 <img align="right" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" alt="Coding GIF" width="300">
 
-- 🔮 Backend architect crafting elegant solutions in the digital shadows
-- ⚔️ Forging scalable backend systems with Laravel's powerful blade
-- 🛡️ Specialized in RESTful API design and database performance optimization
-- 🌑 Delving into advanced system architecture patterns and microservices
-- 🧠 Problem solver with an eye for efficiency and clean code
-- 📫 Summon me at: **m.s.abdulrazek@gmail.com**
-- ⚡ Hidden talent: I can solve a Rubik's cube in under 2 minutes while debugging code!
+- 🎓 I'm a computer science student passionate about backend development
+- 🛠️ Learning and building using PHP, Laravel, and MySQL
+- 📚 Interested in clean code, system design basics, and solving real-world problems
+- 🤝 Looking for internship opportunities to grow and gain hands-on experience
+- 💬 Always open to learning from others and contributing to team projects
+- 📫 Reach me at: **m.s.abdulrazek@gmail.com**
+- ✨ Fun fact: I love solving programming puzzles in my free time!
 
 ---
 
