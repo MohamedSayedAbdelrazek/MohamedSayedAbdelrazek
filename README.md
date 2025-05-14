@@ -4,7 +4,14 @@
   
   [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=3000&pause=1000&center=true&vCenter=true&width=600&lines=Backend+Developer;Problem+Solver;Tech+Enthusiast;Welcome+to+my+GitHub+Profile!;Let's+build+something+amazing+together...)](https://git.io/typing-svg)
   
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=MohamedSayedAbdelrazek&theme=radical" alt="GitHub Streak Stats" />
+  <!-- GitHub Activity Graph -->
+  <img src="https://activity-graph.herokuapp.com/graph?username=MohamedSayedAbdelrazek&bg_color=141321&color=fe428e&line=f8d847&point=A9FEF7&area=true&hide_border=true" alt="Mohamed's GitHub Activity Graph" width="100%" />
+  
+  <!-- GitHub Stats Cards -->
+  <p align="center">
+    <img src="https://github-readme-stats.vercel.app/api?username=MohamedSayedAbdelrazek&show_icons=true&theme=radical&border_radius=10&hide_border=true&bg_color=0D1117&title_color=f94989&icon_color=f0db4f" height="165" alt="GitHub Stats" />
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MohamedSayedAbdelrazek&layout=compact&theme=radical&border_radius=10&hide_border=true&bg_color=0D1117&title_color=f94989" height="165" alt="Top Languages" />
+  </p>
   
   [![Profile Views](https://komarev.com/ghpvc/?username=MohamedSayedAbdelrazek&label=Profile%20Views&color=blueviolet&style=for-the-badge)](https://github.com/MohamedSayedAbdelrazek)
   [![GitHub Followers](https://img.shields.io/github/followers/MohamedSayedAbdelrazek?style=for-the-badge&logo=github&color=blueviolet)](https://github.com/MohamedSayedAbdelrazek?tab=followers)
@@ -14,57 +21,93 @@
 
 ---
 
-## 🚀 About Me
+## ⚡ About Me
 
-- 🔭 Currently working on enhancing my backend development skills
-- 🌱 Learning advanced Laravel techniques and system architecture
-- 👯 Looking to collaborate on open-source PHP/Laravel projects
-- 💬 Ask me about backend development, problem-solving strategies, or coding best practices
-- 📫 How to reach me: **mohamedsayed051213@gmail.com**
-- ⚡ Fun fact: I enjoy solving algorithmic puzzles in my free time!
+<img align="right" src="https://media.giphy.com/media/SWoSkN6DxTszqIKEqv/giphy.gif" alt="Coder GIF" width="300">
+
+- 🔥 Backend developer with a passion for clean, efficient code
+- 🚀 Currently building scalable backend systems with Laravel
+- 🛠️ Crafting RESTful APIs and optimizing database performance
+- 🌱 Exploring advanced system architecture patterns
+- 👯 Seeking to collaborate on innovative backend projects
+- 💬 Ask me about PHP, Laravel, system design, or optimization techniques
+- 📫 Reach me at: **mohamedsayed051213@gmail.com**
+- ⚡ Fun fact: I can solve a Rubik's cube in under 2 minutes!
 
 ---
 
 ## 🔗 Connect With Me
 
-<div align="left">
+<div align="center">
   <a href="https://www.linkedin.com/in/mohamed-sayed-abdulrazek/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   <a href="mailto:mohamedsayed051213@gmail.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
+  <a href="https://github.com/MohamedSayedAbdelrazek" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  </a>
 </div>
 
 ---
 
-## 💻 Tech Stack
+## 🛠️ My Skills Spectrum
 
 <div align="center">
-
-  ### Languages
-  ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-  ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-  ![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-  ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-  ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-  ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-  
-  ### Frameworks & Libraries
-  ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
-  ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
-  ![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
-  
-  ### Databases
-  ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-  ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-  
-  ### Tools & Technologies
-  ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-  ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-  ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-  ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-  ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+  <table>
+    <tr>
+      <td valign="top" width="33%">
+        <h3 align="center">Frontend</h3>
+        <div align="center">
+          <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+          <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+        </div>
+      </td>
+      <td valign="top" width="33%">
+        <h3 align="center">Backend</h3>
+        <div align="center">
+          <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP" />
+          <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel" />
+          <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+          <img src="https://img.shields.io/badge/RESTful_API-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="RESTful API" />
+        </div>
+      </td>
+      <td valign="top" width="33%">
+        <h3 align="center">Tools</h3>
+        <div align="center">
+          <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+          <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+          <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VS Code" />
+          <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="Postman" />
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" width="33%">
+        <h3 align="center">Programming</h3>
+        <div align="center">
+          <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
+          <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++" />
+        </div>
+      </td>
+      <td valign="top" width="33%">
+        <h3 align="center">Soft Skills</h3>
+        <div align="center">
+          <img src="https://img.shields.io/badge/Problem_Solving-FFA116?style=for-the-badge&logo=leetcode&logoColor=white" alt="Problem Solving" />
+          <img src="https://img.shields.io/badge/Team_Work-0078D4?style=for-the-badge&logo=microsoftteams&logoColor=white" alt="Team Work" />
+        </div>
+      </td>
+      <td valign="top" width="33%">
+        <h3 align="center">Current Learning</h3>
+        <div align="center">
+          <img src="https://img.shields.io/badge/Design_Patterns-8BC0D0?style=for-the-badge&logo=read-the-docs&logoColor=white" alt="Design Patterns" />
+          <img src="https://img.shields.io/badge/System_Architecture-D24939?style=for-the-badge&logo=apache&logoColor=white" alt="System Architecture" />
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
 
 </div>
 
@@ -79,29 +122,61 @@
 
 ---
 
-## 🏆 GitHub Trophies
+## 🏆 My Coding Journey
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=MohamedSayedAbdelrazek&theme=radical&row=1&column=6&margin-w=15" alt="GitHub Trophies" />
+  <img src="https://github-profile-trophy.vercel.app/?username=MohamedSayedAbdelrazek&theme=radical&row=1&column=6&margin-w=15&no-bg=true" alt="GitHub Trophies" />
+</div>
+
+<div align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Random Dev Quote" width="800" />
 </div>
 
 ---
 
-## 📌 Pinned Repositories
+## 🔥 Featured Projects
 
 <div align="center">
-  <a href="https://github.com/MohamedSayedAbdelrazek?tab=repositories">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=MohamedSayedAbdelrazek&repo=YOUR_REPO_NAME_1&theme=radical" alt="Pinned Repository 1" />
-  </a>
-  <a href="https://github.com/MohamedSayedAbdelrazek?tab=repositories">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=MohamedSayedAbdelrazek&repo=YOUR_REPO_NAME_2&theme=radical" alt="Pinned Repository 2" />
-  </a>
-</div>
 
-<!-- Replace YOUR_REPO_NAME_1 and YOUR_REPO_NAME_2 with your actual repository names -->
+<!-- PROJECT CARDS -->
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3 align="center">Backend Project</h3>
+      <div align="center">
+        <img src="https://raw.githubusercontent.com/kataras/iris/master/assets/iris_banner_light.png" width="100%" alt="Project 1"/>
+        <p>
+          <a href="https://github.com/MohamedSayedAbdelrazek" target="_blank">
+            <img src="https://img.shields.io/badge/CODE-ff9?style=for-the-badge&logo=github&logoColor=black">
+          </a>
+          <a href="https://github.com/MohamedSayedAbdelrazek" target="_blank">
+            <img src="https://img.shields.io/badge/DEMO-39FF14?style=for-the-badge&logo=netlify&logoColor=black">
+          </a>
+        </p>
+        <p><strong>PHP, Laravel, MySQL</strong> - A robust backend solution with advanced features and optimized performance.</p>
+      </div>
+    </td>
+    <td width="50%" valign="top">
+      <h3 align="center">API Development</h3>
+      <div align="center">
+        <img src="https://cdn.dribbble.com/users/1062909/screenshots/4241913/rest-api-design-1.jpg" width="100%" alt="Project 2"/>
+        <p>
+          <a href="https://github.com/MohamedSayedAbdelrazek" target="_blank">
+            <img src="https://img.shields.io/badge/CODE-ff9?style=for-the-badge&logo=github&logoColor=black">
+          </a>
+          <a href="https://github.com/MohamedSayedAbdelrazek" target="_blank">
+            <img src="https://img.shields.io/badge/DEMO-39FF14?style=for-the-badge&logo=netlify&logoColor=black">
+          </a>
+        </p>
+        <p><strong>PHP, RESTful API, Authentication</strong> - Scalable API architecture with comprehensive documentation.</p>
+      </div>
+    </td>
+  </tr>
+</table>
+</div>
 
 ---
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=100&section=footer&text=Thank%20You%20For%20Visiting!&fontSize=24&fontAlignY=80" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=120&section=footer&text=Let's%20Create%20Something%20Amazing%20Together!&fontSize=24&fontAlignY=80&animation=fadeIn" width="100%" />
 </div>
