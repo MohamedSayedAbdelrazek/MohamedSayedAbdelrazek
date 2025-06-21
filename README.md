@@ -6,8 +6,8 @@
 
   <!-- GitHub Stats Cards with dark theme -->
   <p align="center">
-    <img src="https://github-readme-stats.vercel.app/api?username=MohamedSayedAbdelrazek&show_icons=true&theme=github_dark&border_radius=10&hide_border=true&bg_color=0D1117&title_color=00FFFF&icon_color=00FFFF" height="165" alt="GitHub Stats" />
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MohamedSayedAbdelrazek&layout=compact&theme=github_dark&border_radius=10&hide_border=true&bg_color=0D1117&title_color=00FFFF" height="165" alt="Top Languages" />
+    <img src="https://github-readme-stats.vercel.app/api?username=MohamedSayedAbdelrazek&show_icons=true&theme=github_dark&border_radius=10&hide_border=true&bg_color=0D1117&title_color=00FFFF&icon_color=00FFFF&cache_seconds=3600" height="165" alt="GitHub Stats" />
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MohamedSayedAbdelrazek&layout=compact&theme=github_dark&border_radius=10&hide_border=true&bg_color=0D1117&title_color=00FFFF&cache_seconds=3600" height="165" alt="Top Languages" />
   </p>
   
   [![Profile Views](https://komarev.com/ghpvc/?username=MohamedSayedAbdelrazek&label=Profile%20Views&color=000000&style=for-the-badge)](https://github.com/MohamedSayedAbdelrazek)
@@ -85,6 +85,7 @@
         <div align="center">
           <img src="https://img.shields.io/badge/Java-000000?style=for-the-badge&logo=openjdk&logoColor=ED8B00" alt="Java" />
           <img src="https://img.shields.io/badge/C++-000000?style=for-the-badge&logo=c%2B%2B&logoColor=00599C" alt="C++" />
+          <img src="https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=python&logoColor=3776AB" alt="Python" />
         </div>
       </td>
       <td valign="top" width="33%">
@@ -109,14 +110,12 @@
 
 ## 📊 Digital Footprint
 
-
 <div align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=MohamedSayedAbdelrazek&theme=darkhub&no-frame=true&row=1&column=6&margin-w=15" alt="GitHub Trophies" width="800" />
 </div>
 
-
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=MohamedSayedAbdelrazek&theme=react-dark&bg_color=0D1117&color=00FFFF&line=00FFFF&point=FFFFFF&hide_border=true" width="800" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=MohamedSayedAbdelrazek&theme=react-dark&bg_color=0D1117&color=00FFFF&line=00FFFF&point=FFFFFF&hide_border=true&cache_seconds=3600" width="800" />
 </div>
 
 ---
