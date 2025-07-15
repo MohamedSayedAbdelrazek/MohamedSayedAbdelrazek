@@ -1,10 +1,9 @@
 <div align="center">
   
   # 👨‍💻 Mohamed Sayed Abdelrazek
- 
- [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=3000&pause=1000&center=true&vCenter=true&width=600&lines=Welcome+to+my+GitHub+Profile!;Backend+Developer;Problem+Solver;Tech+Enthusiast;Let's+build+something+amazing+together...)](https://git.io/typing-svg)
 
-  <!-- GitHub Stats Cards with dark theme -->
+  [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=3000&pause=1000&center=true&vCenter=true&width=600&lines=Welcome+to+my+GitHub+Profile!;Backend+Developer;Problem+Solver;Tech+Enthusiast;Let's+build+something+amazing+together...)](https://git.io/typing-svg)
+
   <p align="center">
     <img src="https://github-readme-stats.vercel.app/api?username=MohamedSayedAbdelrazek&show_icons=true&theme=github_dark&border_radius=10&hide_border=true&bg_color=0D1117&title_color=00FFFF&icon_color=00FFFF&cache_seconds=3600" height="165" alt="GitHub Stats" />
     <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MohamedSayedAbdelrazek&layout=compact&theme=github_dark&border_radius=10&hide_border=true&bg_color=0D1117&title_color=00FFFF&cache_seconds=3600" height="165" alt="Top Languages" />
@@ -13,22 +12,21 @@
   [![Profile Views](https://komarev.com/ghpvc/?username=MohamedSayedAbdelrazek&label=Profile%20Views&color=000000&style=for-the-badge)](https://github.com/MohamedSayedAbdelrazek)
   [![GitHub Followers](https://img.shields.io/github/followers/MohamedSayedAbdelrazek?style=for-the-badge&logo=github&color=000000&labelColor=0D1117)](https://github.com/MohamedSayedAbdelrazek?tab=followers)
   [![GitHub Stars](https://img.shields.io/github/stars/MohamedSayedAbdelrazek?affiliations=OWNER%2CCOLLABORATOR&style=for-the-badge&logo=github&color=000000&labelColor=0D1117)](https://github.com/MohamedSayedAbdelrazek?tab=repositories)
-  
 </div>
 
 ---
 
 ## ⚡ About Me
 
-  <img align="right" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" alt="Coding GIF" width="250">
-  
-- 🎓 I'm a computer science student passionate about backend development  
-- 🛠️ Learning and building using PHP, Laravel, and MySQL  
-- 📚 Interested in clean code, system design basics, and solving real-world problems  
-- 🤝 Looking for internship opportunities to grow and gain hands-on experience  
-- 💬 Always open to learning from others and contributing to team projects  
-- 📫 Reach me at: **m.s.abdulrazek@gmail.com**  
-- ✨ Fun fact: I love solving programming puzzles in my free time!
+<img align="right" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" alt="Coding GIF" width="250">
+
+- 🎓 Computer Science student with a passion for backend development  
+- 🛠️ Skilled in PHP, Laravel, and MySQL; always looking to expand my tech stack  
+- 📚 Advocate for clean code, robust system design, and practical problem solving  
+- 🤝 Actively seeking internship opportunities to further develop my skills  
+- 💬 Eager to collaborate, learn from others, and contribute to impactful projects  
+- 📫 Contact: **m.s.abdulrazek@gmail.com**  
+- ✨ Fun fact: I enjoy tackling programming puzzles in my free time!
 
 ---
 
@@ -48,7 +46,7 @@
 
 ---
 
-## 🛠️ Tools & Technologies
+## 🛠️ Skills & Technologies
 
 <div align="center">
   <table bgcolor="#0D1117">
@@ -96,7 +94,7 @@
         </div>
       </td>
       <td valign="top" width="33%">
-        <h3 align="center"><code>Current Quest</code></h3>
+        <h3 align="center"><code>Current Interests</code></h3>
         <div align="center">
           <img src="https://img.shields.io/badge/Design_Patterns-000000?style=for-the-badge&logo=read-the-docs&logoColor=8BC0D0" alt="Design Patterns" />
           <img src="https://img.shields.io/badge/System_Architecture-000000?style=for-the-badge&logo=apache&logoColor=D24939" alt="System Architecture" />
