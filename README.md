@@ -112,14 +112,13 @@
   <img src="https://github-profile-trophy.vercel.app/?username=MohamedSayedAbdelrazek&theme=darkhub&no-frame=true&row=1&column=6&margin-w=15" alt="GitHub Trophies" width="800" />
 </div>
 
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=MohamedSayedAbdelrazek&theme=react-dark&bg_color=0D1117&color=00FFFF&line=00FFFF&point=FFFFFF&hide_border=true&cache_seconds=3600" width="800" />
-</div>
-
 ---
 
 <div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Code Quote" width="800" />
+   <blockquote align="center">
+    <em>“Code is like humor. When you have to explain it, it’s bad.”</em>  
+    <br>– Cory House
+  </blockquote>
 </div>
 
 ---
