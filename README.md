@@ -115,10 +115,10 @@
 ---
 
 <div align="center">
-   <blockquote align="center">
-    <em>“Code is like humor. When you have to explain it, it’s bad.”</em>  
-    <br>– Cory House
-  </blockquote>
+<!--QUOTE_START-->
+  <em>“Code is like humor. When you have to explain it, it’s bad.”</em>  
+  <br>– Cory House
+<!--QUOTE_END-->
 </div>
 
 ---
