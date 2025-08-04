@@ -1,0 +1,14 @@
+“Code is like humor. When you have to explain it, it’s bad.”
+– Cory House
+---
+“Debugging is like being the detective in a crime movie where you are also the murderer.”
+– Filipe Fortes
+---
+“First, solve the problem. Then, write the code.”
+– John Johnson
+---
+“Simplicity is the soul of efficiency.”
+– Austin Freeman
+---
+“Programs must be written for people to read, and only incidentally for machines to execute.”
+– Harold Abelson
