@@ -2,7 +2,7 @@ name: 🌀 Update Random Quote in README
 
 on:
   schedule:
-    - cron: '0 */12 * * *'  # كل 12 ساعة
+        - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:
