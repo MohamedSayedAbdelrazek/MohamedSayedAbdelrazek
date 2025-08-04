@@ -1,0 +1,31 @@
+name: 🌀 Update Random Quote in README
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'  # كل 12 ساعة
+  workflow_dispatch:
+
+jobs:
+  update-quote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: 🔁 Update Quote
+        run: |
+          pip install --upgrade pip
+          python update_quote.py
+
+      - name: 🚀 Commit & Push Changes
+        run: |
+          git config --global user.name 'MohamedSayedBot'
+          git config --global user.email 'bot@mohamedsayed.dev'
+          git add README.md
+          git commit -m '🔁 update quote automatically'
+          git push
