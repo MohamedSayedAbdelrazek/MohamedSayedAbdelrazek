@@ -115,10 +115,10 @@
 ---
 
 <div align="center">
-<!--QUOTE_START-->
-  <em>“Code is like humor. When you have to explain it, it’s bad.”</em>  
-  <br>– Cory House
-<!--QUOTE_END-->
+<blockquote align="center">
+    <em>“Debugging is like being the detective in a crime movie where you are also the murderer.”</em>  
+    <br>– Filipe Fortes
+  </blockquote>
 </div>
 
 ---
