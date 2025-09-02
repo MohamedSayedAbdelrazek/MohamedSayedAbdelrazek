@@ -130,7 +130,4 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:00FFFF&height=120&section=footer&text=Let's%20Create%20Something%20Amazing%20Together!&fontSize=24&fontColor=FFFFFF&fontAlignY=80&animation=fadeIn" width="100%" />
 </div>
 
-### 🐍 Contribution Snake
-![Snake animation](https://raw.githubusercontent.com/MohamedSayedAbdelrazek/MohamedSayedAbdelrazek/output/github-snake.svg)
-
 
