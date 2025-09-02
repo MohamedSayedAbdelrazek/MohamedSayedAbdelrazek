@@ -42,6 +42,9 @@
   <a href="https://github.com/MohamedSayedAbdelrazek" target="_blank">
     <img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
+  <a href="https://mohamedsayedabdelrazek.github.io/myPortfolio/" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=google-chrome&logoColor=blue" alt="Portfolio" />
+  </a>
 </div>
 
 ---
