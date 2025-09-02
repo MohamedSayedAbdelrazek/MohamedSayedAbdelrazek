@@ -131,5 +131,6 @@
 </div>
 
 ### 🐍 Contribution Snake
-![Snake animation](https://github.com/MohamedSayedAbdelrazek/MohamedSayedAbdelrazek/blob/output/github-snake.svg)
+![Snake animation](https://raw.githubusercontent.com/MohamedSayedAbdelrazek/MohamedSayedAbdelrazek/output/github-snake.svg)
+
 
