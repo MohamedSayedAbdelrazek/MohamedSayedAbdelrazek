@@ -4,11 +4,6 @@
 
   [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=3000&pause=1000&center=true&vCenter=true&width=600&lines=Welcome+to+my+GitHub+Profile!;Backend+Developer;Problem+Solver;Tech+Enthusiast;Let's+build+something+amazing+together...)](https://git.io/typing-svg)
 
-  <p align="center">
-    <img src="https://github-readme-stats.vercel.app/api?username=MohamedSayedAbdelrazek&show_icons=true&theme=github_dark&border_radius=10&hide_border=true&bg_color=0D1117&title_color=00FFFF&icon_color=00FFFF&cache_seconds=3600" height="165" alt="GitHub Stats" />
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MohamedSayedAbdelrazek&layout=compact&theme=github_dark&border_radius=10&hide_border=true&bg_color=0D1117&title_color=00FFFF&cache_seconds=3600" height="165" alt="Top Languages" />
-  </p>
-  
   [![Profile Views](https://komarev.com/ghpvc/?username=MohamedSayedAbdelrazek&label=Profile%20Views&color=000000&style=for-the-badge)](https://github.com/MohamedSayedAbdelrazek)
   [![GitHub Followers](https://img.shields.io/github/followers/MohamedSayedAbdelrazek?style=for-the-badge&logo=github&color=000000&labelColor=0D1117)](https://github.com/MohamedSayedAbdelrazek?tab=followers)
   [![GitHub Stars](https://img.shields.io/github/stars/MohamedSayedAbdelrazek?affiliations=OWNER%2CCOLLABORATOR&style=for-the-badge&logo=github&color=000000&labelColor=0D1117)](https://github.com/MohamedSayedAbdelrazek?tab=repositories)
@@ -129,5 +124,3 @@
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:00FFFF&height=120&section=footer&text=Let's%20Create%20Something%20Amazing%20Together!&fontSize=24&fontColor=FFFFFF&fontAlignY=80&animation=fadeIn" width="100%" />
 </div>
-
-
