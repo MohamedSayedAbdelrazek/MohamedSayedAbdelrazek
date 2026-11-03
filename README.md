@@ -7,7 +7,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-    <img src="assets/hero-dark.svg" width="100%" alt="Mohamed Sayed Abdulrazek — .NET Backend Developer with a PHP and Laravel background. I build clean, reliable back-ends and REST APIs, now with C# and .NET. Currently studying the .NET Diploma at Route. Open to opportunities.">
+    <img src="assets/hero-dark.svg" width="100%" alt="Mohamed Sayed Abdulrazek — .NET Backend Developer with a PHP and Laravel background. I build clean, reliable back-ends and REST APIs, now with C# and .NET. Currently studying the .NET Diploma at Route. Open to opportunities. Beside the text, an animated illustration of a developer with headphones typing at a desk with two monitors.">
   </picture>
 </p>
 

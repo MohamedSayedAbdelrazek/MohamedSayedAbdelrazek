@@ -13,10 +13,11 @@ EMAIL = "m.s.abdulrazek@gmail.com"
 
 # Hero banner. The first role is the one shown when animation is off.
 GREETING = "Hi, I'm"
+NAME_LINES = ["Mohamed Sayed", "Abdulrazek"]  # the hero sets the name on two lines
 ROLES = [
     ".NET Backend Developer",
-    "C# · Entity Framework Core · LINQ",
-    "Backend developer with a Laravel background",
+    "C# · EF Core · LINQ",
+    "From Laravel to .NET",
 ]
 TAGLINE = "I build clean, reliable back-ends and REST APIs, now with C# and .NET."
 CURRENTLY = ("Currently", ".NET Diploma at Route")

@@ -1,8 +1,8 @@
 """Static cards: hero banner, "About me", tech stack, link buttons and footer.
 
 Design rules: Geist for everything people read, body text >= 16px and labels >= 13px at the
-900px viewBox, every text colour >= 4.5:1 on its background, one-time fade-ins, and at most
-one slow loop per card.
+900px viewBox, every text colour >= 4.5:1 on its background and one-time fade-ins. The only
+continuous motion is the hero illustration (see scene.py), kept slow and stopped by reduced-motion.
 """
 
 from __future__ import annotations
@@ -11,6 +11,7 @@ import content as C
 
 from .core import document, esc, fmt, mix, reveal, text_width, wrap
 from .icons import TECH, icon
+from .scene import scene
 
 W = 900
 RADIUS = 20  # outer corner radius shared by every card
@@ -72,80 +73,88 @@ def _pill(x: float, y: float, w: float, h: float, fill: str, stroke: str) -> str
 
 
 def hero(t: dict[str, str]) -> str:
-    H = 372
-    cx = W / 2
-    name_size = 56.0
-    while text_width(C.FULL_NAME, name_size, "sans", 800, -0.025 * name_size) > W - 2 * PAD:
-        name_size -= 1
-    tag_size = 18.0
-    while text_width(C.TAGLINE, tag_size) > W - 2 * PAD and tag_size > 16:
-        tag_size -= 0.5
-    for role in C.ROLES:
-        assert text_width(role, 24, "sans", 600) < W - 2 * PAD, f"role too long: {role}"
+    H = 424
+    col_w = 448  # text column; the illustration fills the right side
+    art_x, art_y, art_w, art_h = 496, 26, 380, 330
 
-    out = [_frame(t, H, glow=True)]
+    name_size = 54.0
+    while max(text_width(line, name_size, "sans", 800, -0.025 * name_size) for line in C.NAME_LINES) > col_w:
+        name_size -= 1
+    track = fmt(-0.025 * name_size)
+    for role in C.ROLES:
+        assert text_width(role, 23, "sans", 600) < col_w, f"role too long: {role}"
+    tag_size, tag_lh = 17, 26
+    tagline = wrap(C.TAGLINE, tag_size, col_w - 20)
+    assert len(tagline) <= 2, "tagline wraps to more than two lines"
+
+    art, art_css = scene(t, art_x, art_y, art_w, art_h)
+    out = [_frame(t, H, glow=True), f'<g opacity="0">{reveal(0.3, dy=8, dur=1.0)}{art}</g>']
 
     out.append(
         f'<g opacity="0">{reveal(0.1, dy=6)}'
-        f'<text x="{cx}" y="98" text-anchor="middle" class="s" font-size="19" fill="{t["muted"]}">{esc(C.GREETING)}</text></g>'
+        f'<text x="{PAD}" y="88" class="s" font-size="19" fill="{t["muted"]}">{esc(C.GREETING)}</text></g>'
     )
-    out.append(
-        f'<g opacity="0">{reveal(0.25, dy=10, dur=0.9)}'
-        f'<text x="{cx}" y="160" text-anchor="middle" class="s" font-size="{fmt(name_size)}" font-weight="800" '
-        f'letter-spacing="{fmt(-0.025 * name_size)}" fill="{t["text"]}">{esc(C.FULL_NAME)}</text></g>'
+    name = "".join(
+        f'<text x="{PAD - 2}" y="{fmt(146 + i * name_size * 1.04)}" class="s" font-size="{fmt(name_size)}" font-weight="800" '
+        f'letter-spacing="{track}" fill="{t["text"]}">{esc(line)}</text>'
+        for i, line in enumerate(C.NAME_LINES)
     )
+    out.append(f'<g opacity="0">{reveal(0.25, dy=10, dur=0.9)}{name}</g>')
+    ry = 146 + name_size * 1.04 + 50
     # Only the first role is visible without animation; CSS crossfades through the rest.
     roles = "".join(
-        f'<text x="{cx}" y="208" text-anchor="middle" class="s r{i}" font-size="24" font-weight="600" '
+        f'<text x="{PAD}" y="{fmt(ry)}" class="s r{i}" font-size="23" font-weight="600" '
         f'fill="{t["accent"]}" opacity="{1 if i == 0 else 0}">{esc(role)}</text>'
         for i, role in enumerate(C.ROLES)
     )
     out.append(f'<g opacity="0">{reveal(0.5, dy=6)}{roles}</g>')
-    out.append(
-        f'<g opacity="0">{reveal(0.7, dy=6)}'
-        f'<text x="{cx}" y="250" text-anchor="middle" class="s" font-size="{fmt(tag_size)}" fill="{t["muted"]}">{esc(C.TAGLINE)}</text></g>'
+    ty = ry + 36
+    tag = "".join(
+        f'<text x="{PAD}" y="{fmt(ty + i * tag_lh)}" class="s" font-size="{tag_size}" fill="{t["muted"]}">{esc(line)}</text>'
+        for i, line in enumerate(tagline)
     )
+    out.append(f'<g opacity="0">{reveal(0.7, dy=6)}{tag}</g>')
 
     # Pills: what I'm doing now + availability.
-    ph, size = 40, 15
+    ph, size = 38, 15
     label, value = C.CURRENTLY
     label_w = text_width(label + ":", size, "sans", 400)
     value_w = text_width(value, size, "sans", 600)
-    w1 = 18 + 18 + 10 + label_w + 6 + value_w + 18
-    w2 = 18 + 10 + 12 + text_width(C.STATUS, size, "sans", 600) + 18
-    gap = 12
-    x1 = cx - (w1 + gap + w2) / 2
-    x2 = x1 + w1 + gap
-    py = 286
+    w1 = 16 + 18 + 10 + label_w + 6 + value_w + 16
+    w2 = 16 + 10 + 12 + text_width(C.STATUS, size, "sans", 600) + 16
+    x1 = PAD
+    x2 = x1 + w1 + 10
+    py = H - 40 - ph
     base = py + ph / 2 + size * 0.36
     accent_tint = mix(t["bg"], t["accent"], 0.10)
     ok_tint = mix(t["bg"], t["ok"], 0.10)
     cap = (  # a small graduation cap
-        f'<g transform="translate({fmt(x1 + 18)} {fmt(py + ph / 2 - 9)})" fill="none" stroke="{t["accent"]}" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">'
+        f'<g transform="translate({fmt(x1 + 16)} {fmt(py + ph / 2 - 9)})" fill="none" stroke="{t["accent"]}" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">'
         '<path d="M1 6.5 9 3l8 3.5-8 3.5z"/><path d="M4.5 8.2v4.3c1.4 1.4 7.6 1.4 9 0V8.2"/><path d="M17 6.5v4.5"/></g>'
     )
     out.append(
         f'<g opacity="0">{reveal(0.9, dy=6)}'
         + _pill(x1, py, w1, ph, accent_tint, mix(t["bg"], t["accent"], 0.28))
         + cap
-        + f'<text x="{fmt(x1 + 46)}" y="{fmt(base)}" class="s" font-size="{size}" fill="{t["muted"]}">{esc(label)}:</text>'
-        f'<text x="{fmt(x1 + 46 + label_w + 6)}" y="{fmt(base)}" class="s" font-size="{size}" font-weight="600" fill="{t["text"]}">{esc(value)}</text>'
+        + f'<text x="{fmt(x1 + 44)}" y="{fmt(base)}" class="s" font-size="{size}" fill="{t["muted"]}">{esc(label)}:</text>'
+        f'<text x="{fmt(x1 + 44 + label_w + 6)}" y="{fmt(base)}" class="s" font-size="{size}" font-weight="600" fill="{t["text"]}">{esc(value)}</text>'
         + _pill(x2, py, w2, ph, ok_tint, mix(t["bg"], t["ok"], 0.28))
-        + f'<circle cx="{fmt(x2 + 23)}" cy="{fmt(py + ph / 2)}" r="4.5" fill="{t["ok"]}" class="halo"/>'
-        f'<circle cx="{fmt(x2 + 23)}" cy="{fmt(py + ph / 2)}" r="4.5" fill="{t["ok"]}"/>'
-        f'<text x="{fmt(x2 + 40)}" y="{fmt(base)}" class="s" font-size="{size}" font-weight="600" fill="{t["ok"]}">{esc(C.STATUS)}</text>'
+        + f'<circle cx="{fmt(x2 + 21)}" cy="{fmt(py + ph / 2)}" r="4.5" fill="{t["ok"]}" class="halo"/>'
+        f'<circle cx="{fmt(x2 + 21)}" cy="{fmt(py + ph / 2)}" r="4.5" fill="{t["ok"]}"/>'
+        f'<text x="{fmt(x2 + 38)}" y="{fmt(base)}" class="s" font-size="{size}" font-weight="600" fill="{t["ok"]}">{esc(C.STATUS)}</text>'
         "</g>"
     )
-    assert x1 > PAD, "hero pills are too wide"
+    assert ty + (len(tagline) - 1) * tag_lh + 16 < py, "hero text runs into the pills"
 
     return document(
         W,
         H,
         "".join(out),
         title=f"{C.FULL_NAME} — {C.ROLES[0]}",
-        desc=f"{C.GREETING} {C.FULL_NAME}, {C.ROLES[0]}. {C.TAGLINE} {label}: {value}. {C.STATUS}.",
+        desc=f"{C.GREETING} {C.FULL_NAME}, {C.ROLES[0]}. {C.TAGLINE} {label}: {value}. {C.STATUS}. "
+        "Illustration of a developer with headphones at a desk with two monitors, typing code.",
         fonts=[("sans", 400), ("sans", 600), ("sans", 800)],
-        css=_roles_css() + HALO_CSS,
+        css=_roles_css() + HALO_CSS + art_css,
     )
 
 
