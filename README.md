@@ -7,7 +7,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-    <img src="assets/hero-dark.svg" width="100%" alt="Mohamed Sayed Abdelrazek — Backend Developer. Computer Science student building clean, reliable back-ends with PHP, Laravel, C# / .NET, MySQL and REST APIs. Open to opportunities.">
+    <img src="assets/hero-dark.svg" width="100%" alt="Mohamed Sayed Abdulrazek — Backend Developer. Computer Science student building clean, reliable back-ends with PHP, Laravel, C# / .NET, MySQL and REST APIs. Open to opportunities.">
   </picture>
 </p>
 
@@ -41,7 +41,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/terminal-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/terminal-light.svg">
-    <img src="assets/terminal-dark.svg" width="100%" alt="php artisan about — Name: Mohamed Sayed Abdelrazek. Role: Backend Developer. Education: Computer Science Student. Location: Egypt. Status: open to opportunities. Stack: PHP, Laravel, C#, .NET, MySQL, RESTful APIs, HTML5, CSS3, Java, C++, Python, Git, GitHub, Postman, VS Code. Believes in clean code, robust design and practical solutions. Exploring design patterns and system architecture. Off-duty: solving programming puzzles.">
+    <img src="assets/terminal-dark.svg" width="100%" alt="php artisan about — Name: Mohamed Sayed Abdulrazek. Role: Backend Developer. Education: Computer Science Student. Location: Egypt. Status: open to opportunities. Stack: PHP, Laravel, C#, .NET, MySQL, RESTful APIs, HTML5, CSS3, Java, C++, Python, Git, GitHub, Postman, VS Code. Believes in clean code, robust design and practical solutions. Exploring design patterns and system architecture. Off-duty: solving programming puzzles.">
   </picture>
 </p>
 
