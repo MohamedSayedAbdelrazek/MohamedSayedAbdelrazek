@@ -23,39 +23,34 @@ ICON_FILE = ROOT / "scripts" / "icons.json"
 # --------------------------------------------------------------------------- #
 
 THEMES: dict[str, dict[str, str]] = {
+    # Calm, .NET-inspired violet. Every text colour reads at 4.5:1 or better on bg, panel and raised.
     "dark": {
-        "bg": "#0A0A0D",
-        "panel": "#111116",
-        "raised": "#18181F",
-        "line": "#26262F",
-        "grid": "#1F1F27",
-        "text": "#F4F4F5",
-        "muted": "#A1A1AA",
-        "dim": "#6B6B76",
-        "accent": "#FF2D20",
-        "accent2": "#FF8A3D",
-        "shine": "#FFD2BD",
-        "ok": "#3DD68C",
-        "warn": "#F5B83D",
-        "info": "#7AA2F7",
-        "glow": "0.32",
+        "bg": "#0E1118",
+        "panel": "#141823",
+        "raised": "#1B2030",
+        "line": "#262C3B",
+        "grid": "#1E2331",
+        "text": "#EEF0F6",
+        "muted": "#B9BECE",
+        "dim": "#9AA0B4",
+        "accent": "#A996FF",
+        "accent2": "#8B97FF",
+        "ok": "#5FD49B",
+        "glow": "0.16",
     },
     "light": {
-        "bg": "#FBFBF9",
+        "bg": "#FCFCFE",
         "panel": "#FFFFFF",
-        "raised": "#F3F3EF",
-        "line": "#E2E2DC",
-        "grid": "#E6E6E0",
-        "text": "#17171C",
-        "muted": "#52525B",
-        "dim": "#8E8E98",
-        "accent": "#E8231A",
-        "accent2": "#F2652A",
-        "shine": "#FFB089",
-        "ok": "#12A05A",
-        "warn": "#B97F05",
-        "info": "#3B63D9",
-        "glow": "0.16",
+        "raised": "#F3F2FA",
+        "line": "#E4E3EE",
+        "grid": "#ECEBF4",
+        "text": "#17161F",
+        "muted": "#474857",
+        "dim": "#5C5E70",
+        "accent": "#5B3FD9",
+        "accent2": "#4A5BD0",
+        "ok": "#12784A",
+        "glow": "0.09",
     },
 }
 
@@ -109,11 +104,20 @@ def text_width(text: str, size: float, family: str = "sans", weight: int = 400, 
     return units * size / upem + tracking * max(len(text) - 1, 0)
 
 
-MONO_ADVANCE = 0.6  # JetBrains Mono: 600 / 1000 units per em
-
-
-def mono_width(chars: int, size: float) -> float:
-    return chars * size * MONO_ADVANCE
+def wrap(text: str, size: float, max_width: float, family: str = "sans", weight: int = 400) -> list[str]:
+    """Greedy word wrap using the real glyph advances of the embedded font."""
+    lines: list[str] = []
+    line = ""
+    for word in text.split():
+        trial = f"{line} {word}".strip()
+        if line and text_width(trial, size, family, weight) > max_width:
+            lines.append(line)
+            line = word
+        else:
+            line = trial
+    if line:
+        lines.append(line)
+    return lines
 
 
 # --------------------------------------------------------------------------- #
@@ -236,13 +240,7 @@ def reveal(begin: float, *, dy: float = 0, dur: float = 0.7) -> str:
     return out
 
 
-BASE_CSS = (
-    ".pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.4s ease-out infinite}"
-    "@keyframes pulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(3.2);opacity:0}}"
-    ".blink{animation:blink 1.05s steps(1,end) infinite}"
-    "@keyframes blink{50%{opacity:0}}"
-    "@media (prefers-reduced-motion:reduce){*{animation:none!important}}"
-)
+BASE_CSS = "@media (prefers-reduced-motion:reduce){*{animation:none!important}}"
 
 
 def document(

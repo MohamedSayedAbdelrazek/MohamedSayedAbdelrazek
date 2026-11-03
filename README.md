@@ -7,7 +7,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-    <img src="assets/hero-dark.svg" width="100%" alt="Mohamed Sayed Abdulrazek — Backend Developer. Computer Science student building clean, reliable back-ends with PHP, Laravel, C# / .NET, MySQL and REST APIs. Open to opportunities.">
+    <img src="assets/hero-dark.svg" width="100%" alt="Mohamed Sayed Abdulrazek — .NET Backend Developer with a PHP and Laravel background. I build clean, reliable back-ends and REST APIs, now with C# and .NET. Currently studying the .NET Diploma at Route. Open to opportunities.">
   </picture>
 </p>
 
@@ -26,11 +26,11 @@
       <img src="assets/btn-email-dark.svg" height="58" alt="Email: m.s.abdulrazek@gmail.com">
     </picture>
   </a>
-  <a href="https://mosayed.me">
+  <a href="https://mohamedsayedabdelrazek.github.io/">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="assets/btn-portfolio-dark.svg">
       <source media="(prefers-color-scheme: light)" srcset="assets/btn-portfolio-light.svg">
-      <img src="assets/btn-portfolio-dark.svg" height="58" alt="Portfolio: mosayed.me">
+      <img src="assets/btn-portfolio-dark.svg" height="58" alt="Portfolio: mohamedsayedabdelrazek.github.io">
     </picture>
   </a>
 </p>
@@ -39,9 +39,9 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/terminal-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/terminal-light.svg">
-    <img src="assets/terminal-dark.svg" width="100%" alt="php artisan about — Name: Mohamed Sayed Abdulrazek. Role: Backend Developer. Education: Computer Science Student. Location: Egypt. Status: open to opportunities. Stack: PHP, Laravel, C#, .NET, MySQL, RESTful APIs, HTML5, CSS3, Java, C++, Python, Git, GitHub, Postman, VS Code. Believes in clean code, robust design and practical solutions. Exploring design patterns and system architecture. Off-duty: solving programming puzzles.">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/about-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/about-light.svg">
+    <img src="assets/about-dark.svg" width="100%" alt="About me — I'm a backend developer from Egypt. I started out building REST APIs and full web apps with PHP, Laravel and MySQL, and I'm now growing into the .NET world with C# and Entity Framework Core. I care about clean code, clear design and software that is easy to maintain. Now: .NET Diploma at Route (C#, OOP, LINQ, EF Core). Before: backend development with PHP, Laravel and MySQL. Coursework: Machine Learning, Python and Image Processing. Looking for: opportunities and internships in backend and .NET roles.">
   </picture>
 </p>
 
@@ -49,7 +49,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/stack-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/stack-light.svg">
-    <img src="assets/stack-dark.svg" width="100%" alt="Tech stack — Backend: PHP, Laravel, C#, .NET · Data & API: MySQL, REST APIs, Postman · Frontend: HTML5, CSS3 · Languages: Java, C++, Python · Tooling: Git, GitHub, VS Code · Focus: Design Patterns, System Design, Problem Solving, Teamwork.">
+    <img src="assets/stack-dark.svg" width="100%" alt="Tech stack — .NET (current focus): C#, .NET, EF Core, LINQ. Previously: PHP, Laravel, MySQL, REST APIs. Languages: Python, Java, C++. Web: HTML5, CSS3. Tools: Git, GitHub, Postman, VS Code. Learning: Machine Learning, Image Processing.">
   </picture>
 </p>
 
@@ -57,7 +57,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/MohamedSayedAbdelrazek/MohamedSayedAbdelrazek/output/stats-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/MohamedSayedAbdelrazek/MohamedSayedAbdelrazek/output/stats-light.svg">
-    <img src="https://raw.githubusercontent.com/MohamedSayedAbdelrazek/MohamedSayedAbdelrazek/output/stats-dark.svg" width="100%" alt="Live GitHub activity: contributions, commits, pull requests, repositories, stars, contribution heatmap, top languages and streaks.">
+    <img src="https://raw.githubusercontent.com/MohamedSayedAbdelrazek/MohamedSayedAbdelrazek/output/stats-dark.svg" width="100%" alt="Activity Monitor — my live GitHub activity: contributions, commits, pull requests, public repositories and stars, a contribution heatmap for the last year, top languages and streaks. Refreshed automatically every few hours.">
   </picture>
 </p>
 
@@ -75,12 +75,10 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/footer-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/footer-light.svg">
-    <img src="assets/footer-dark.svg" width="100%" alt="HTTP/1.1 200 OK — Let's build something reliable together.">
+    <img src="assets/footer-dark.svg" width="100%" alt="Thanks for visiting — let's build something great together. Feel free to reach out on LinkedIn or by email.">
   </picture>
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=MohamedSayedAbdelrazek&label=profile%20views&color=ff2d20&style=flat-square" alt="Profile views">
-  <br>
-  <sub>Every card above is a hand-built animated SVG rendered by <a href="scripts/build.py">my own Python pipeline</a> · the activity monitor refreshes itself with GitHub Actions.</sub>
+  <img src="https://komarev.com/ghpvc/?username=MohamedSayedAbdelrazek&label=profile%20views&color=7c5cff&style=flat-square" alt="Profile views">
 </p>

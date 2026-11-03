@@ -29,7 +29,7 @@ def write(path: Path, svg: str) -> None:
 def build_static(out: Path) -> None:
     for name, theme in THEMES.items():
         write(out / f"hero-{name}.svg", cards.hero(theme))
-        write(out / f"terminal-{name}.svg", cards.terminal(theme))
+        write(out / f"about-{name}.svg", cards.about(theme))
         write(out / f"stack-{name}.svg", cards.stack(theme))
         write(out / f"footer-{name}.svg", cards.footer(theme))
         for i, link in enumerate(C.LINKS):

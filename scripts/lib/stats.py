@@ -8,7 +8,7 @@ import random
 import urllib.request
 from collections import Counter
 
-from .core import animate, document, esc, fmt, mix, mono_width, readable, reveal, text_width
+from .core import document, esc, fmt, mix, readable, reveal, text_width
 
 W = 900
 API = "https://api.github.com/graphql"
@@ -154,21 +154,25 @@ def summarise(*, login, days, commits, prs, stars, repos, total, languages) -> d
 
 
 def _odometer(t: dict[str, str], value: int, x: float, y: float, size: float, uid: str, begin: float) -> str:
-    """Digits roll into place like a mechanical counter."""
+    """Digits roll into place once, like a mechanical counter (each digit sits in a fixed-width cell)."""
     text = f"{value:,}"
-    cw = mono_width(1, size)
+    digit_w = max(text_width(str(d), size, "sans", 600) for d in range(10))
+    comma_w = text_width(",", size, "sans", 600)
     lh = size * 1.25
-    out = [f'<clipPath id="{uid}"><rect x="{fmt(x - 2)}" y="{fmt(y - size)}" width="{fmt(cw * len(text) + 4)}" height="{fmt(size * 1.3)}"/></clipPath>']
+    total = sum(digit_w if ch.isdigit() else comma_w for ch in text)
+    out = [f'<clipPath id="{uid}"><rect x="{fmt(x - 2)}" y="{fmt(y - size)}" width="{fmt(total + 4)}" height="{fmt(size * 1.3)}"/></clipPath>']
     out.append(f'<g clip-path="url(#{uid})">')
+    cx = x
     digit_index = 0
-    for i, ch in enumerate(text):
-        cx = x + i * cw
+    for ch in text:
         if not ch.isdigit():
-            out.append(f'<text x="{fmt(cx)}" y="{fmt(y)}" class="m" font-size="{size}" font-weight="700" fill="{t["text"]}">{ch}</text>')
+            out.append(f'<text x="{fmt(cx)}" y="{fmt(y)}" class="s" font-size="{size}" font-weight="600" fill="{t["text"]}">{ch}</text>')
+            cx += comma_w
             continue
+        mid = cx + digit_w / 2
         target = 10 + int(ch)  # roll through a full turn before landing
         strip = "".join(
-            f'<text x="{fmt(cx)}" y="{fmt(y + k * lh)}" class="m" font-size="{size}" font-weight="700" fill="{t["text"]}">{k % 10}</text>'
+            f'<text x="{fmt(mid)}" y="{fmt(y + k * lh)}" text-anchor="middle" class="s" font-size="{size}" font-weight="600" fill="{t["text"]}">{k % 10}</text>'
             for k in range(target + 1)
         )
         delay = begin + digit_index * 0.08
@@ -177,69 +181,60 @@ def _odometer(t: dict[str, str], value: int, x: float, y: float, size: float, ui
             f'<animateTransform attributeName="transform" type="translate" from="0 0" to="0 {fmt(-target * lh)}" begin="{fmt(delay)}s" dur="1.6s" '
             f'fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.12 0.9 0.2 1"/>{strip}</g>'
         )
+        cx += digit_w
         digit_index += 1
     out.append("</g>")
     return "".join(out)
 
 
+def _panel(t: dict[str, str], x: float, y: float, w: float, h: float) -> str:
+    return f'<rect x="{fmt(x)}" y="{fmt(y)}" width="{fmt(w)}" height="{fmt(h)}" rx="14" fill="{t["panel"]}" stroke="{t["line"]}"/>'
+
+
 def dashboard(t: dict[str, str], data: dict) -> str:
-    pad = 24
-    H = 566
-    out = [
-        "<defs>",
-        f'<linearGradient id="mark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{t["accent"]}"/><stop offset="1" stop-color="{t["accent2"]}"/></linearGradient>',
-        f'<linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="{t["accent2"]}" stop-opacity="0"/>'
-        f'<stop offset="0.5" stop-color="{t["accent2"]}" stop-opacity="0.1"/><stop offset="1" stop-color="{t["accent2"]}" stop-opacity="0"/></linearGradient>',
-        "</defs>",
-        f'<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="19.5" fill="{t["bg"]}" stroke="{t["line"]}"/>',
-    ]
+    pad = 28
+    inner = W - 2 * pad
+    out: list[str] = []
 
     # Header.
+    title_w = text_width("Activity Monitor", 24, "sans", 600)
     out.append(
-        f'<rect x="{pad}" y="22" width="28" height="28" rx="8" fill="url(#mark)"/>'
-        f'<path d="M{pad + 7} {41}l4-6 4 3 6-8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
-        f'<text x="{pad + 40}" y="42" class="s" font-size="19" font-weight="600" fill="{t["text"]}">Activity Monitor</text>'
-        f'<text x="{fmt(pad + 40 + text_width("Activity Monitor", 19, "sans", 600) + 12)}" y="41.5" class="m" font-size="11" fill="{t["dim"]}">github.com/{esc(data["login"])}</text>'
-    )
-    synced = f"synced {data['generated']}"
-    sw = mono_width(len(synced), 11)
-    out.append(
-        f'<circle cx="{fmt(W - pad - sw - 16)}" cy="37.5" r="3.6" fill="{t["accent"]}" class="pulse"/>'
-        f'<circle cx="{fmt(W - pad - sw - 16)}" cy="37.5" r="3.6" fill="{t["accent"]}"/>'
-        f'<text x="{W - pad}" y="41.5" text-anchor="end" class="m" font-size="11" fill="{t["muted"]}">{synced}</text>'
+        f'<rect x="{pad}" y="34" width="4" height="26" rx="2" fill="{t["accent"]}"/>'
+        f'<text x="{pad + 16}" y="58" class="s" font-size="24" font-weight="600" fill="{t["text"]}">Activity Monitor</text>'
+        f'<text x="{fmt(pad + 16 + title_w + 14)}" y="57" class="s" font-size="14" fill="{t["dim"]}">github.com/{esc(data["login"])}</text>'
+        f'<text x="{W - pad}" y="57" text-anchor="end" class="s" font-size="13" fill="{t["dim"]}">Updated {esc(data["generated"])}</text>'
     )
 
     # KPI tiles.
     tiles = [
-        ("CONTRIBUTIONS", data["total"], "last 12 months"),
-        ("COMMITS", data["commits"], "last 12 months"),
-        ("PULL REQUESTS", data["prs"], "all time"),
-        ("PUBLIC REPOS", data["repos"], "owned"),
-        ("STARS EARNED", data["stars"], "across repos"),
+        ("Contributions", data["total"], "last 12 months"),
+        ("Commits", data["commits"], "last 12 months"),
+        ("Pull requests", data["prs"], "all time"),
+        ("Public repos", data["repos"], "owned"),
+        ("Stars earned", data["stars"], "across repos"),
     ]
     gap = 12
-    tw = (W - 2 * pad - gap * (len(tiles) - 1)) / len(tiles)
-    ty, th = 68, 96
+    tw = (inner - gap * (len(tiles) - 1)) / len(tiles)
+    ty, th = 86, 108
     for i, (label, value, sub) in enumerate(tiles):
         x = pad + i * (tw + gap)
         out.append(
             f'<g opacity="0">{reveal(0.1 + i * 0.07, dy=6, dur=0.5)}'
-            f'<rect x="{fmt(x)}" y="{ty}" width="{fmt(tw)}" height="{th}" rx="12" fill="{t["panel"]}" stroke="{t["line"]}"/>'
-            f'<rect x="{fmt(x + 16)}" y="{ty + 18}" width="6" height="6" rx="1.5" fill="{t["accent"] if i == 0 else t["dim"]}"/>'
-            f'<text x="{fmt(x + 28)}" y="{ty + 24.5}" class="m" font-size="10" font-weight="700" fill="{t["muted"]}" letter-spacing="0.6">{label}</text>'
-            + _odometer(t, value, x + 16, ty + 62, 28, f"odo{i}", 0.3 + i * 0.1)
-            + f'<text x="{fmt(x + 16)}" y="{ty + 82}" class="m" font-size="10" fill="{t["dim"]}">{sub}</text>'
+            + _panel(t, x, ty, tw, th)
+            + f'<text x="{fmt(x + 18)}" y="{ty + 30}" class="s" font-size="14" font-weight="600" fill="{t["muted"]}">{label}</text>'
+            + _odometer(t, value, x + 18, ty + 70, 32, f"odo{i}", 0.3 + i * 0.1)
+            + f'<text x="{fmt(x + 18)}" y="{ty + 92}" class="s" font-size="13" fill="{t["dim"]}">{sub}</text>'
             "</g>"
         )
 
     # Heatmap.
     hy = ty + th + 14
-    hh = 196
-    out.append(f'<rect x="{pad}" y="{hy}" width="{W - 2 * pad}" height="{hh}" rx="12" fill="{t["panel"]}" stroke="{t["line"]}"/>')
+    hh = 236
+    out.append(_panel(t, pad, hy, inner, hh))
     out.append(
-        f'<text x="{pad + 18}" y="{hy + 28}" class="s" font-size="14" font-weight="600" fill="{t["text"]}">Contribution heatmap</text>'
-        f'<text x="{W - pad - 18}" y="{hy + 28}" text-anchor="end" class="m" font-size="11" fill="{t["muted"]}">'
-        f'<tspan fill="{t["text"]}" font-weight="700">{data["total"]:,}</tspan> contributions · {data["active_days"]} active days</text>'
+        f'<text x="{pad + 22}" y="{hy + 34}" class="s" font-size="17" font-weight="600" fill="{t["text"]}">Contributions in the last year</text>'
+        f'<text x="{W - pad - 22}" y="{hy + 34}" text-anchor="end" class="s" font-size="14" fill="{t["muted"]}">'
+        f'<tspan fill="{t["text"]}" font-weight="600">{data["total"]:,}</tspan> contributions · {data["active_days"]} active days</text>'
     )
     days = data["days"]
     first = dt.date.fromisoformat(days[0][0]) if days else dt.date.today()
@@ -247,9 +242,10 @@ def dashboard(t: dict[str, str], data: dict) -> str:
     cell, step = 11, 14
     weeks = (offset + len(days) + 6) // 7
     grid_w = weeks * step - (step - cell)
-    gx = pad + 18 + 30 + max(0, (W - 2 * pad - 36 - 30 - grid_w) / 2)
-    gy = hy + 58
-    levels = [mix(t["raised"], t["line"], 0.7)] + [mix(t["raised"], t["accent"], a) for a in (0.32, 0.62, 1.0)] + [t["accent2"]]
+    label_col = 40
+    gx = pad + 22 + label_col + max(0, (inner - 44 - label_col - grid_w) / 2)
+    gy = hy + 76
+    levels = [mix(t["raised"], t["line"], 0.6)] + [mix(t["raised"], t["accent"], a) for a in (0.3, 0.6, 1.0)] + [t["accent2"]]
     # Quartiles of the active days, like GitHub's own graph, so a single huge day doesn't flatten the rest.
     active = sorted(n for _, n in days if n)
     cuts = [active[min(len(active) - 1, int(len(active) * q))] for q in (0.25, 0.5, 0.75)] if active else [1, 2, 3]
@@ -260,6 +256,7 @@ def dashboard(t: dict[str, str], data: dict) -> str:
         return 1 + sum(n > c for c in cuts)
 
     month_seen = set()
+    last_label_x = -100.0
     for idx, (date, n) in enumerate(days):
         pos = idx + offset
         col, row = divmod(pos, 7)
@@ -268,49 +265,44 @@ def dashboard(t: dict[str, str], data: dict) -> str:
         d = dt.date.fromisoformat(date)
         if d.day <= 7 and row == 0 or (idx == 0 and d.day <= 20):
             key = (d.year, d.month)
-            if key not in month_seen and col < weeks - 1:
+            if key not in month_seen and col < weeks - 2 and x - last_label_x > 34:
                 month_seen.add(key)
-                out.append(f'<text x="{fmt(x)}" y="{gy - 10}" class="m" font-size="9.5" fill="{t["dim"]}">{d.strftime("%b")}</text>')
+                last_label_x = x
+                out.append(f'<text x="{fmt(x)}" y="{gy - 12}" class="s" font-size="13" fill="{t["dim"]}">{d.strftime("%b")}</text>')
         out.append(
             f'<rect x="{fmt(x)}" y="{fmt(y)}" width="{cell}" height="{cell}" rx="2.6" fill="{levels[level(n)]}" opacity="0">'
-            f'<animate attributeName="opacity" from="0" to="1" begin="{0.6 + col * 0.022 + row * 0.012:.3f}s" dur="0.35s" fill="freeze"/>'
+            f'<animate attributeName="opacity" from="0" to="1" begin="{0.6 + col * 0.02 + row * 0.01:.3f}s" dur="0.4s" fill="freeze"/>'
             f"<title>{date}: {n}</title></rect>"
         )
     for row, name in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
-        out.append(f'<text x="{fmt(gx - 8)}" y="{fmt(gy + row * step + 9)}" text-anchor="end" class="m" font-size="9.5" fill="{t["dim"]}">{name}</text>')
-    # Sweep highlight across the grid.
-    out.append(
-        f'<clipPath id="gridclip"><rect x="{fmt(gx - 3)}" y="{gy - 3}" width="{fmt(grid_w + 6)}" height="{7 * step + 3}"/></clipPath>'
-        f'<g clip-path="url(#gridclip)"><rect x="{fmt(gx - 120)}" y="{gy - 4}" width="120" height="{7 * step + 4}" fill="url(#sweep)">'
-        f'<animate attributeName="x" values="{fmt(gx - 120)};{fmt(gx - 120)};{fmt(gx + grid_w)};{fmt(gx + grid_w)}" keyTimes="0;0.25;0.75;1" dur="8s" repeatCount="indefinite"/></rect></g>'
-    )
-    # Legend.
-    ly = gy + 7 * step + 14
-    lx = gx + grid_w - 5 * step - 34
-    out.append(f'<text x="{fmt(lx - 8)}" y="{ly + 9}" text-anchor="end" class="m" font-size="9.5" fill="{t["dim"]}">less</text>')
+        out.append(f'<text x="{fmt(gx - 10)}" y="{fmt(gy + row * step + 10)}" text-anchor="end" class="s" font-size="13" fill="{t["dim"]}">{name}</text>')
+    # Legend + highlights.
+    ly = gy + 7 * step + 22
+    less_w = text_width("Less", 13)
+    lx = gx + grid_w - text_width("More", 13) - 8 - 5 * step
+    out.append(f'<text x="{fmt(lx - 8)}" y="{ly + 10}" text-anchor="end" class="s" font-size="13" fill="{t["dim"]}">Less</text>')
     for k, c in enumerate(levels):
         out.append(f'<rect x="{fmt(lx + k * step)}" y="{ly}" width="{cell}" height="{cell}" rx="2.6" fill="{c}"/>')
-    out.append(f'<text x="{fmt(lx + 5 * step + 4)}" y="{ly + 9}" class="m" font-size="9.5" fill="{t["dim"]}">more</text>')
+    out.append(f'<text x="{fmt(lx + 5 * step + 5)}" y="{ly + 10}" class="s" font-size="13" fill="{t["dim"]}">More</text>')
     best = data["best_day"]
     if best["count"]:
         bd = dt.date.fromisoformat(best["date"]).strftime("%b %d, %Y")
-        out.append(
-            f'<text x="{fmt(gx)}" y="{ly + 9}" class="m" font-size="9.5" fill="{t["dim"]}">peak: '
-            f'<tspan fill="{t["muted"]}">{best["count"]} on {bd}</tspan> · busiest weekday: <tspan fill="{t["muted"]}">{data["busiest_weekday"]}</tspan></text>'
-        )
+        peak = f'Best day: <tspan fill="{t["text"]}">{best["count"]} on {bd}</tspan>   ·   Busiest weekday: <tspan fill="{t["text"]}">{data["busiest_weekday"]}</tspan>'
+        out.append(f'<text x="{fmt(gx)}" y="{ly + 10}" class="s" font-size="13" fill="{t["dim"]}" xml:space="preserve">{peak}</text>')
+    assert lx - 8 - less_w > gx + 400, "heatmap legend collides with the highlights"
 
     # Bottom row: languages + streaks.
     by = hy + hh + 14
-    bh = H - by - pad
-    lw = 520
-    out.append(f'<rect x="{pad}" y="{by}" width="{lw}" height="{bh}" rx="12" fill="{t["panel"]}" stroke="{t["line"]}"/>')
-    out.append(f'<text x="{pad + 18}" y="{by + 28}" class="s" font-size="14" font-weight="600" fill="{t["text"]}">Languages</text>')
-    out.append(f'<text x="{pad + lw - 18}" y="{by + 28}" text-anchor="end" class="m" font-size="10" fill="{t["dim"]}">by code size · public repos</text>')
+    bh = 204
+    lw = 512
+    out.append(_panel(t, pad, by, lw, bh))
+    out.append(f'<text x="{pad + 22}" y="{by + 34}" class="s" font-size="17" font-weight="600" fill="{t["text"]}">Languages</text>')
+    out.append(f'<text x="{pad + lw - 22}" y="{by + 34}" text-anchor="end" class="s" font-size="13" fill="{t["dim"]}">by code size in public repos</text>')
     langs = data["languages"][:6]
     if len(data["languages"]) > 6:
         langs = langs[:5]
         langs.append(("Other", 1 - sum(p for _, p, _ in langs), t["dim"]))
-    bar_x, bar_y, bar_w = pad + 18, by + 44, lw - 36
+    bar_x, bar_y, bar_w = pad + 22, by + 54, lw - 44
     out.append(f'<clipPath id="barclip"><rect x="{bar_x}" y="{bar_y}" width="{bar_w}" height="10" rx="5"/></clipPath>')
     out.append(f'<g clip-path="url(#barclip)"><rect x="{bar_x}" y="{bar_y}" width="{bar_w}" height="10" fill="{t["raised"]}"/>')
     cx = bar_x
@@ -323,57 +315,60 @@ def dashboard(t: dict[str, str], data: dict) -> str:
         )
         cx += seg
     out.append("</g>")
-    col_w = (lw - 36) / 2
+    col_w = (lw - 44) / 2
     for k, (name, share, colour) in enumerate(langs):
         col, row = divmod(k, 3)
-        x = pad + 18 + col * col_w
-        y = by + 82 + row * 22
+        x = pad + 22 + col * col_w
+        y = by + 104 + row * 32
         colour = readable(colour, t["panel"], 2.2)
         out.append(
-            f'<g opacity="0">{reveal(1.0 + k * 0.08)}<circle cx="{fmt(x + 4)}" cy="{y - 4}" r="4" fill="{colour}"/>'
-            f'<text x="{fmt(x + 16)}" y="{y}" class="s" font-size="12.5" font-weight="600" fill="{t["text"]}">{esc(name)}</text>'
-            f'<text x="{fmt(x + col_w - 24)}" y="{y}" text-anchor="end" class="m" font-size="11" fill="{t["muted"]}">{share * 100:.1f}%</text></g>'
+            f'<g opacity="0">{reveal(1.0 + k * 0.08)}<circle cx="{fmt(x + 5)}" cy="{y - 5}" r="5" fill="{colour}"/>'
+            f'<text x="{fmt(x + 18)}" y="{y}" class="s" font-size="15" font-weight="600" fill="{t["text"]}">{esc(name)}</text>'
+            f'<text x="{fmt(x + col_w - 28)}" y="{y}" text-anchor="end" class="s" font-size="14" fill="{t["muted"]}">{share * 100:.1f}%</text></g>'
         )
 
     sx = pad + lw + 12
     sw2 = W - pad - sx
-    out.append(f'<rect x="{sx}" y="{by}" width="{sw2}" height="{bh}" rx="12" fill="{t["panel"]}" stroke="{t["line"]}"/>')
-    out.append(f'<text x="{sx + 18}" y="{by + 28}" class="s" font-size="14" font-weight="600" fill="{t["text"]}">Streaks</text>')
+    out.append(_panel(t, sx, by, sw2, bh))
+    out.append(f'<text x="{sx + 22}" y="{by + 34}" class="s" font-size="17" font-weight="600" fill="{t["text"]}">Streaks</text>')
     # Ring: current vs longest.
     r = 40
-    rcx, rcy = sx + 18 + r + 4, by + 44 + r + 4
+    rcx, rcy = sx + 22 + r + 5, by + 48 + (bh - 48) / 2
     circ = 2 * 3.14159265 * r
     ratio = data["current_streak"] / data["longest_streak"] if data["longest_streak"] else 0
     out.append(f'<circle cx="{fmt(rcx)}" cy="{fmt(rcy)}" r="{r}" fill="none" stroke="{t["raised"]}" stroke-width="9"/>')
     out.append(
-        f'<circle cx="{fmt(rcx)}" cy="{fmt(rcy)}" r="{r}" fill="none" stroke="url(#mark)" stroke-width="9" stroke-linecap="round" '
+        f'<circle cx="{fmt(rcx)}" cy="{fmt(rcy)}" r="{r}" fill="none" stroke="{t["accent"]}" stroke-width="9" stroke-linecap="round" '
         f'stroke-dasharray="{fmt(circ)}" stroke-dashoffset="{fmt(circ)}" transform="rotate(-90 {fmt(rcx)} {fmt(rcy)})">'
         f'<animate attributeName="stroke-dashoffset" from="{fmt(circ)}" to="{fmt(circ * (1 - max(ratio, 0.02)))}" begin="1.1s" dur="1.4s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/></circle>'
     )
     out.append(
-        f'<text x="{fmt(rcx)}" y="{fmt(rcy + 4)}" text-anchor="middle" class="m" font-size="24" font-weight="700" fill="{t["text"]}">{data["current_streak"]}</text>'
-        f'<text x="{fmt(rcx)}" y="{fmt(rcy + 20)}" text-anchor="middle" class="m" font-size="9.5" fill="{t["dim"]}">{"day" if data["current_streak"] == 1 else "days"}</text>'
+        f'<text x="{fmt(rcx)}" y="{fmt(rcy + 6)}" text-anchor="middle" class="s" font-size="26" font-weight="600" fill="{t["text"]}">{data["current_streak"]}</text>'
+        f'<text x="{fmt(rcx)}" y="{fmt(rcy + 24)}" text-anchor="middle" class="s" font-size="13" fill="{t["dim"]}">{"day" if data["current_streak"] == 1 else "days"}</text>'
     )
-    tx = rcx + r + 26
+    tx = rcx + r + 28
+
     def days_(n: int) -> str:
         return f"{n} day" if n == 1 else f"{n} days"
 
     facts = [
-        ("CURRENT STREAK", days_(data["current_streak"])),
-        ("LONGEST STREAK", days_(data["longest_streak"])),
-        ("ACTIVE DAYS", f"{data['active_days']} / {len(data['days'])}"),
+        ("Current streak", days_(data["current_streak"])),
+        ("Longest streak", days_(data["longest_streak"])),
+        ("Active days", f"{data['active_days']} of {len(data['days'])}"),
     ]
     for k, (lab, val) in enumerate(facts):
-        y = by + 56 + k * 31
+        y = by + 74 + k * 46
         out.append(
-            f'<g opacity="0">{reveal(1.2 + k * 0.1)}<text x="{fmt(tx)}" y="{y}" class="m" font-size="9.5" font-weight="700" fill="{t["dim"]}" letter-spacing="0.5">{lab}</text>'
-            f'<text x="{fmt(tx)}" y="{y + 15}" class="m" font-size="13" font-weight="700" fill="{t["text"]}">{esc(val)}</text></g>'
+            f'<g opacity="0">{reveal(1.2 + k * 0.1)}<text x="{fmt(tx)}" y="{y}" class="s" font-size="13" fill="{t["dim"]}">{lab}</text>'
+            f'<text x="{fmt(tx)}" y="{y + 21}" class="s" font-size="17" font-weight="600" fill="{t["text"]}">{esc(val)}</text></g>'
         )
 
+    H = by + bh + pad
+    frame = f'<rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="19.5" fill="{t["bg"]}" stroke="{t["line"]}"/>'
     return document(
         W,
         H,
-        "".join(out),
+        frame + "".join(out),
         title="GitHub activity",
         desc=(
             f"{data['total']} contributions in the last year, {data['commits']} commits, {data['prs']} pull requests, "
@@ -382,5 +377,5 @@ def dashboard(t: dict[str, str], data: dict) -> str:
             + ", ".join(f"{n} {p * 100:.0f}%" for n, p, _ in data["languages"][:5])
             + "."
         ),
-        fonts=[("sans", 600), ("mono", 400), ("mono", 700)],
+        fonts=[("sans", 400), ("sans", 600)],
     )

@@ -5,80 +5,43 @@ Edit it, then run `python scripts/build.py` to regenerate the artwork in /assets
 
 LOGIN = "MohamedSayedAbdelrazek"
 
-NAME_LINE_1 = "Mohamed Sayed"
-NAME_LINE_2 = "Abdulrazek"
-FULL_NAME = f"{NAME_LINE_1} {NAME_LINE_2}"
-MONOGRAM = "MS"
-HANDLE = "~/mohamed-sayed"
-STATUS = "OPEN TO OPPORTUNITIES"
+FULL_NAME = "Mohamed Sayed Abdulrazek"
+STATUS = "Open to opportunities"
 LOCATION = "Egypt"
-WEBSITE = "mosayed.me"
+WEBSITE = "mohamedsayedabdelrazek.github.io"
 EMAIL = "m.s.abdulrazek@gmail.com"
 
-# Cycled by the typing effect in the hero banner.
+# Hero banner. The first role is the one shown when animation is off.
+GREETING = "Hi, I'm"
 ROLES = [
-    "Backend Developer",
-    "Laravel Artisan",
-    "REST API Designer",
-    "Clean Code Advocate",
-    "System Design Enthusiast",
+    ".NET Backend Developer",
+    "C# · Entity Framework Core · LINQ",
+    "Backend developer with a Laravel background",
 ]
-TAGLINE = "Computer Science student building clean, reliable back-ends."
-HERO_CHIPS = ["PHP", "Laravel", "C# / .NET", "MySQL", "REST APIs"]
+TAGLINE = "I build clean, reliable back-ends and REST APIs, now with C# and .NET."
+CURRENTLY = ("Currently", ".NET Diploma at Route")
 
-# The animated request that travels through the hero diagram.
-LIFECYCLE = ["Client", "Router", "Middleware", "Controller", "Service", "MySQL"]
-REQUEST = ("GET", "/api/v1/developer")
-RESPONSE_BODY = '{ "role": "backend", "status": "shipping" }'
-
-# Rendered as `php artisan about` in the terminal card.
-# Item styles: None (default), "ok" (green, bold) or "link" (accent).
-ABOUT = [
-    (
-        "Developer",
-        [
-            ("Name", FULL_NAME, None),
-            ("Role", "Backend Developer", None),
-            ("Education", "Computer Science Student", None),
-            ("Location", LOCATION, None),
-            ("Status", STATUS, "ok"),
-        ],
-    ),
-    (
-        "Stack",
-        [
-            ("Backend", "PHP · Laravel · C# · .NET", None),
-            ("Data & APIs", "MySQL · RESTful APIs", None),
-            ("Frontend", "HTML5 · CSS3", None),
-            ("Languages", "Java · C++ · Python", None),
-            ("Tooling", "Git · GitHub · Postman · VS Code", None),
-        ],
-    ),
-    (
-        "Mindset",
-        [
-            ("Believes in", "Clean code · Robust design · Practical solutions", None),
-            ("Exploring", "Design Patterns · System Architecture", None),
-            ("Off-duty", "Solving programming puzzles", None),
-        ],
-    ),
-    (
-        "Contact",
-        [
-            ("Email", EMAIL, "link"),
-            ("Portfolio", WEBSITE, "link"),
-        ],
-    ),
+# "About me" card: a short bio next to a few key facts as (label, headline, detail).
+ABOUT_BIO = (
+    "I'm a backend developer from Egypt. I started out building REST APIs and full web apps "
+    "with PHP, Laravel and MySQL, and I'm now growing into the .NET world with C# and "
+    "Entity Framework Core. I care about clean code, clear design and software that is easy to maintain."
+)
+ABOUT_FACTS = [
+    ("Now", ".NET Diploma at Route", "C#, OOP, LINQ, EF Core"),
+    ("Before", "Backend development", "PHP, Laravel & MySQL"),
+    ("Coursework", "Machine Learning", "Python & Image Processing"),
+    ("Looking for", "Opportunities & internships", "Backend and .NET roles"),
 ]
 
-# Rack units in the tech-stack card: (unit label, caption, technology keys).
+# Tech-stack card: (group title, short caption, technology keys). The first group is highlighted.
 STACK = [
-    ("BACKEND", "core services", ["php", "laravel", "csharp", "dotnet"]),
-    ("DATA · API", "storage & contracts", ["mysql", "restapi", "postman"]),
-    ("FRONTEND", "interfaces", ["html5", "css"]),
-    ("LANGUAGES", "general purpose", ["java", "cplusplus", "python"]),
-    ("TOOLING", "daily workflow", ["git", "github", "vscode"]),
-    ("FOCUS", "levelling up", ["patterns", "architecture", "problems", "teamwork"]),
+    (".NET", "current focus", ["csharp", "dotnet", "efcore", "linq"]),
+    ("Previously", "PHP backend", ["php", "laravel", "mysql", "restapi"]),
+    ("Languages", "also used", ["python", "java", "cplusplus"]),
+    ("Web", "front-end basics", ["html5", "css"]),
+    ("Tools", "everyday workflow", ["git", "github", "postman", "vscode"]),
+    ("Learning", "coursework", ["ml", "imageproc"]),
 ]
 
 # Contact buttons under the hero.
@@ -102,13 +65,9 @@ LINKS = [
         "label": "Portfolio",
         "sub": WEBSITE,
         "icon": "globe",
-        "url": f"https://{WEBSITE}",
+        "url": f"https://{WEBSITE}/",
     },
 ]
 
-FOOTER_HEADERS = [
-    ("HTTP/1.1", "200 OK"),
-    ("Content-Type:", "application/thanks+json"),
-    ("Connection:", "keep-alive"),
-]
-FOOTER_LINE = "Let's build something reliable together."
+FOOTER_LINE = "Thanks for visiting — let's build something great together."
+FOOTER_SUB = "Feel free to reach out on LinkedIn or by email."
