@@ -6,7 +6,7 @@ Edit it, then run `python scripts/build.py` to regenerate the artwork in /assets
 LOGIN = "MohamedSayedAbdelrazek"
 
 NAME_LINE_1 = "Mohamed Sayed"
-NAME_LINE_2 = "Abdelrazek"
+NAME_LINE_2 = "Abdulrazek"
 FULL_NAME = f"{NAME_LINE_1} {NAME_LINE_2}"
 MONOGRAM = "MS"
 HANDLE = "~/mohamed-sayed"
