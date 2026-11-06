@@ -19,16 +19,21 @@ ROLES = [
     "C# · EF Core · LINQ",
     "From Laravel to .NET",
 ]
-TAGLINE = "I build clean, reliable back-ends and REST APIs, now with C# and .NET."
+UNIVERSITY = "Benha University"
+DEGREE = "Computer Science"
+GPA, GPA_MAX = "3.8", "4.0"
+TAGLINE = f"{DEGREE} student at {UNIVERSITY}, building clean, reliable back-ends with C# and .NET."
 CURRENTLY = ("Currently", ".NET Diploma at Route")
 
 # "About me" card: a short bio next to a few key facts as (label, headline, detail).
 ABOUT_BIO = (
-    "I'm a backend developer from Egypt. I started out building REST APIs and full web apps "
+    "I'm a Computer Science student at Benha University and a backend developer from Egypt. "
+    "I started out building REST APIs and full web apps "
     "with PHP, Laravel and MySQL, and I'm now growing into the .NET world with C# and "
     "Entity Framework Core. I care about clean code, clear design and software that is easy to maintain."
 )
 ABOUT_FACTS = [
+    ("University", "Computer Science", "Benha University · GPA 3.8 / 4.0"),
     ("Now", ".NET Diploma at Route", "C#, OOP, LINQ, EF Core"),
     ("Before", "Backend development", "PHP, Laravel & MySQL"),
     ("Coursework", "Machine Learning", "Python & Image Processing"),

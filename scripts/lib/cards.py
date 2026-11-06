@@ -72,6 +72,47 @@ def _pill(x: float, y: float, w: float, h: float, fill: str, stroke: str) -> str
     return f'<rect x="{fmt(x)}" y="{fmt(y)}" width="{fmt(w)}" height="{fmt(h)}" rx="{fmt(h / 2)}" fill="{fill}" stroke="{stroke}"/>'
 
 
+GPA_POS = (W - 26, 262)  # right edge and top of the floating GPA card in the hero
+
+GPA_CSS = (
+    ".float{animation:float 6s ease-in-out infinite}"
+    "@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}"
+)
+
+
+def _gpa_badge(t: dict[str, str], right: float, y: float) -> tuple[str, float]:
+    """Floating card: a ring that fills to GPA / max once, the number inside, labels beside it."""
+    r, sw = 27, 6
+    h = 84
+    lines = ((f"GPA {C.GPA} / {C.GPA_MAX}", 17, 600), (C.DEGREE, 13, 400), (C.UNIVERSITY, 13, 400))
+    w = round(18 + 2 * r + sw + 14 + max(text_width(text, size, "sans", weight) for text, size, weight in lines) + 22)
+    x = right - w
+    cx, cy = x + 18 + r + sw / 2, y + h / 2
+    share = float(C.GPA) / float(C.GPA_MAX)
+    circ = 2 * 3.14159265 * r
+    tx = cx + r + sw / 2 + 14
+    dark = int(t["bg"][1:3], 16) < 0x60
+    out = (
+        "<defs>"
+        f'<linearGradient id="gpaRing" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="{t["accent"]}"/><stop offset="1" stop-color="{t["accent2"]}"/></linearGradient>'
+        f'<filter id="gpaShadow" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="{0.35 if dark else 0.10}"/></filter>'
+        "</defs>"
+        '<g class="float">'
+        f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="18" fill="{t["panel"]}" stroke="{mix(t["bg"], t["accent"], 0.35)}" filter="url(#gpaShadow)"/>'
+        f'<circle cx="{fmt(cx)}" cy="{fmt(cy)}" r="{r}" fill="none" stroke="{t["raised"]}" stroke-width="{sw}"/>'
+        f'<circle cx="{fmt(cx)}" cy="{fmt(cy)}" r="{r}" fill="none" stroke="url(#gpaRing)" stroke-width="{sw}" stroke-linecap="round" '
+        f'stroke-dasharray="{fmt(circ)}" stroke-dashoffset="{fmt(circ)}" transform="rotate(-90 {fmt(cx)} {fmt(cy)})">'
+        f'<animate attributeName="stroke-dashoffset" from="{fmt(circ)}" to="{fmt(circ * (1 - share))}" begin="1.2s" dur="1.6s" fill="freeze" '
+        'calcMode="spline" keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/></circle>'
+        f'<text x="{fmt(cx)}" y="{fmt(cy + 7)}" text-anchor="middle" class="s" font-size="21" font-weight="800" fill="{t["text"]}">{esc(C.GPA)}</text>'
+        f'<text x="{fmt(tx)}" y="{fmt(y + 34)}" class="s" font-size="17" font-weight="600" fill="{t["text"]}">GPA {esc(C.GPA)}<tspan fill="{t["muted"]}" font-weight="400"> / {esc(C.GPA_MAX)}</tspan></text>'
+        f'<text x="{fmt(tx)}" y="{fmt(y + 56)}" class="s" font-size="13" fill="{t["dim"]}">{esc(C.DEGREE)}</text>'
+        f'<text x="{fmt(tx)}" y="{fmt(y + 72)}" class="s" font-size="13" fill="{t["dim"]}">{esc(C.UNIVERSITY)}</text>'
+        "</g>"
+    )
+    return out, w
+
+
 def hero(t: dict[str, str]) -> str:
     H = 424
     col_w = 448  # text column; the illustration fills the right side
@@ -88,7 +129,12 @@ def hero(t: dict[str, str]) -> str:
     assert len(tagline) <= 2, "tagline wraps to more than two lines"
 
     art, art_css = scene(t, art_x, art_y, art_w, art_h)
-    out = [_frame(t, H, glow=True), f'<g opacity="0">{reveal(0.3, dy=8, dur=1.0)}{art}</g>']
+    badge, _ = _gpa_badge(t, GPA_POS[0], GPA_POS[1])
+    out = [
+        _frame(t, H, glow=True),
+        f'<g opacity="0">{reveal(0.3, dy=8, dur=1.0)}{art}</g>',
+        f'<g opacity="0">{reveal(1.0, dy=10, dur=0.8)}{badge}</g>',
+    ]
 
     out.append(
         f'<g opacity="0">{reveal(0.1, dy=6)}'
@@ -151,10 +197,10 @@ def hero(t: dict[str, str]) -> str:
         H,
         "".join(out),
         title=f"{C.FULL_NAME} — {C.ROLES[0]}",
-        desc=f"{C.GREETING} {C.FULL_NAME}, {C.ROLES[0]}. {C.TAGLINE} {label}: {value}. {C.STATUS}. "
+        desc=f"{C.GREETING} {C.FULL_NAME}, {C.ROLES[0]}. {C.TAGLINE} GPA {C.GPA} out of {C.GPA_MAX}. {label}: {value}. {C.STATUS}. "
         "Illustration of a developer with headphones at a desk with two monitors, typing code.",
         fonts=[("sans", 400), ("sans", 600), ("sans", 800)],
-        css=_roles_css() + HALO_CSS + art_css,
+        css=_roles_css() + HALO_CSS + GPA_CSS + art_css,
     )
 
 

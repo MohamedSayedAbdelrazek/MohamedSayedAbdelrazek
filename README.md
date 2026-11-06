@@ -7,7 +7,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-    <img src="assets/hero-dark.svg" width="100%" alt="Mohamed Sayed Abdulrazek — .NET Backend Developer with a PHP and Laravel background. I build clean, reliable back-ends and REST APIs, now with C# and .NET. Currently studying the .NET Diploma at Route. Open to opportunities. Beside the text, an animated illustration of a developer with headphones typing at a desk with two monitors.">
+    <img src="assets/hero-dark.svg" width="100%" alt="Mohamed Sayed Abdulrazek — .NET Backend Developer with a PHP and Laravel background. Computer Science student at Benha University with a GPA of 3.8 out of 4.0, building clean, reliable back-ends with C# and .NET. Currently studying the .NET Diploma at Route. Open to opportunities. Beside the text, an animated illustration of a developer with headphones typing at a desk with two monitors.">
   </picture>
 </p>
 
@@ -41,7 +41,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/about-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/about-light.svg">
-    <img src="assets/about-dark.svg" width="100%" alt="About me — I'm a backend developer from Egypt. I started out building REST APIs and full web apps with PHP, Laravel and MySQL, and I'm now growing into the .NET world with C# and Entity Framework Core. I care about clean code, clear design and software that is easy to maintain. Now: .NET Diploma at Route (C#, OOP, LINQ, EF Core). Before: backend development with PHP, Laravel and MySQL. Coursework: Machine Learning, Python and Image Processing. Looking for: opportunities and internships in backend and .NET roles.">
+    <img src="assets/about-dark.svg" width="100%" alt="About me — I'm a Computer Science student at Benha University and a backend developer from Egypt. I started out building REST APIs and full web apps with PHP, Laravel and MySQL, and I'm now growing into the .NET world with C# and Entity Framework Core. I care about clean code, clear design and software that is easy to maintain. University: Computer Science at Benha University, GPA 3.8 out of 4.0. Now: .NET Diploma at Route (C#, OOP, LINQ, EF Core). Before: backend development with PHP, Laravel and MySQL. Coursework: Machine Learning, Python and Image Processing. Looking for: opportunities and internships in backend and .NET roles.">
   </picture>
 </p>
 
